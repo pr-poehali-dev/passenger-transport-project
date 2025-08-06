@@ -19,6 +19,30 @@ const Index = () => {
 
   const services = [
     {
+      icon: 'Heart',
+      title: 'Свадьбы и торжества',
+      description: 'Комфортабельный транспорт для особых дней',
+      features: ['Украшение автомобиля', 'Фотосъемка в пути', 'Музыкальное сопровождение']
+    },
+    {
+      icon: 'Plane',
+      title: 'Трансферы',
+      description: 'Встреча в аэропортах и ж/д вокзалах',
+      features: ['Встреча с табличкой', 'Помощь с багажом', 'Отслеживание рейсов']
+    },
+    {
+      icon: 'Theater',
+      title: 'Культурные мероприятия',
+      description: 'Поездки в театры, музеи, концерты',
+      features: ['Групповые тарифы', 'Ожидание после мероприятия', 'Комфортные автобусы']
+    },
+    {
+      icon: 'Building',
+      title: 'Корпоративные перевозки',
+      description: 'Доставка сотрудников, деловые поездки',
+      features: ['Регулярные маршруты', 'Корпоративные тарифы', 'Отчетность по поездкам']
+    },
+    {
       icon: 'Users',
       title: 'Микроавтобусы',
       description: 'Mercedes Sprinter на 8-20 мест',
@@ -29,12 +53,6 @@ const Index = () => {
       title: 'Автобусы',
       description: 'Туристические автобусы на 30-55 мест',
       features: ['Видеосистема', 'Туалет', 'Холодильник']
-    },
-    {
-      icon: 'Car',
-      title: 'Легковые автомобили',
-      description: 'Комфортные седаны и минивэны',
-      features: ['VIP-класс', 'Профессиональный водитель', 'Трансферы']
     }
   ];
 
@@ -121,7 +139,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader className="text-center">
