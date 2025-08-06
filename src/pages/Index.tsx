@@ -285,8 +285,8 @@ const Index = () => {
                 <Icon name="Mail" size={32} />
               </div>
               <h4 className="text-xl font-semibold">Email</h4>
-              <p className="text-blue-200">info@crimtrans.ru</p>
-              <p className="text-blue-200">booking@crimtrans.ru</p>
+              <p className="text-blue-200">usik19911390@mail.ru</p>
+              <p className="text-blue-200">Заявки и вопросы</p>
             </div>
             
             <div className="space-y-4">
