@@ -73,7 +73,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Icon name="Bus" size={32} className="text-primary" />
-              <h1 className="text-2xl font-bold text-gray-900">КрымТранс</h1>
+              <h1 className="text-2xl font-bold text-gray-900">ЗаказАвтобусов</h1>
             </div>
             <nav className="hidden md:flex space-x-6">
               <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Услуги</a>
@@ -116,7 +116,7 @@ const Index = () => {
             <div className="mb-8">
               <img 
                 src="https://cdn.poehali.dev/files/54bc9337-3cc6-4020-ac7b-8adbc8cfdb28.png" 
-                alt="Автопарк КрымТранс" 
+                alt="Автопарк ЗаказАвтобусов" 
                 className="w-full max-w-3xl mx-auto rounded-lg shadow-xl"
               />
             </div>
@@ -302,7 +302,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <p className="text-blue-200 mb-4">Работаем круглосуточно</p>
             <p className="text-sm text-blue-300">
-              © 2024 КрымТранс. Все права защищены.
+              © 2024 ЗаказАвтобусов. Все права защищены.
             </p>
           </div>
         </div>
