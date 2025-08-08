@@ -338,8 +338,18 @@ const Index = () => {
                 <Icon name="Phone" size={32} />
               </div>
               <h4 className="text-xl font-semibold">Телефон</h4>
-              <p className="text-blue-200">+7 (978) 600-79-40</p>
-              <p className="text-blue-200">+7 (978) 860-07-63 WhatsApp</p>
+              <a href="tel:+79786007940" className="text-blue-200 hover:text-white transition-colors block">
+                +7 (978) 600-79-40
+              </a>
+              <a 
+                href="https://wa.me/79788600763" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-200 hover:text-white transition-colors flex items-center justify-center gap-2"
+              >
+                <Icon name="MessageCircle" size={16} />
+                +7 (978) 860-07-63 WhatsApp
+              </a>
             </div>
             
             <div className="space-y-4">
