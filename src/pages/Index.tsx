@@ -118,7 +118,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Icon name="Bus" size={32} className="text-primary" />
-              <h1 className="text-2xl font-bold text-gray-900">ЗаказАвтобусов</h1>
+              <h2 className="text-2xl font-bold text-gray-900">ЗаказАвтобусов</h2>
             </div>
             <nav className="hidden md:flex space-x-6">
               <button 
@@ -180,9 +180,9 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-6">
+            <h1 className="text-5xl font-bold mb-6">
               Пассажирские перевозки по Крыму и России
-            </h2>
+            </h1>
             <p className="text-xl text-blue-100 mb-8">
               Комфортные поездки на современном транспорте с профессиональными водителями
             </p>
