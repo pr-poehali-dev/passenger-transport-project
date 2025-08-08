@@ -16,6 +16,42 @@ const Index = () => {
     date: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/send-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          phone: '',
+          route: '',
+          passengers: '',
+          date: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const services = [
     {
@@ -178,7 +214,7 @@ const Index = () => {
             
             <Card>
               <CardContent className="p-8">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Ваше имя *</Label>
@@ -249,9 +285,35 @@ const Index = () => {
                     />
                   </div>
                   
-                  <Button type="submit" size="lg" className="w-full">
-                    <Icon name="Send" size={20} className="mr-2" />
-                    Отправить заявку
+                  {submitStatus === 'success' && (
+                    <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                      ✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+                    </div>
+                  )}
+                  
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                      ❌ Ошибка отправки заявки. Попробуйте еще раз или свяжитесь с нами по телефону.
+                    </div>
+                  )}
+                  
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full" 
+                    disabled={isSubmitting || !formData.name || !formData.phone || !formData.route}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Icon name="Loader2" size={20} className="mr-2 animate-spin" />
+                        Отправляем...
+                      </>
+                    ) : (
+                      <>
+                        <Icon name="Send" size={20} className="mr-2" />
+                        Отправить заявку
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
