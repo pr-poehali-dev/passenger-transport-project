@@ -18,6 +18,15 @@ const Index = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -112,15 +121,59 @@ const Index = () => {
               <h1 className="text-2xl font-bold text-gray-900">ЗаказАвтобусов</h1>
             </div>
             <nav className="hidden md:flex space-x-6">
-              <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Услуги</a>
-              <a href="#order" className="text-gray-600 hover:text-primary transition-colors">Заказать</a>
-              <a href="#contact" className="text-gray-600 hover:text-primary transition-colors">Контакты</a>
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="text-gray-600 hover:text-primary transition-colors"
+              >
+                Услуги
+              </button>
+              <button 
+                onClick={() => scrollToSection('order')} 
+                className="text-gray-600 hover:text-primary transition-colors"
+              >
+                Заказать
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="text-gray-600 hover:text-primary transition-colors"
+              >
+                Контакты
+              </button>
             </nav>
-            <Button className="md:hidden">
-              <Icon name="Menu" size={20} />
+            <Button 
+              className="md:hidden" 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <Icon name={isMobileMenuOpen ? 'X' : 'Menu'} size={20} />
             </Button>
           </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white border-t shadow-lg">
+            <nav className="container mx-auto px-4 py-4 space-y-4">
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="block w-full text-left text-gray-600 hover:text-primary transition-colors py-2"
+              >
+                Услуги
+              </button>
+              <button 
+                onClick={() => scrollToSection('order')} 
+                className="block w-full text-left text-gray-600 hover:text-primary transition-colors py-2"
+              >
+                Заказать
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="block w-full text-left text-gray-600 hover:text-primary transition-colors py-2"
+              >
+                Контакты
+              </button>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -157,7 +210,11 @@ const Index = () => {
               />
             </div>
             
-            <Button size="lg" className="bg-white text-blue-800 hover:bg-blue-50">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-800 hover:bg-blue-50"
+              onClick={() => scrollToSection('order')}
+            >
               <Icon name="Phone" size={20} className="mr-2" />
               Заказать перевозку
             </Button>
