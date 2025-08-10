@@ -554,7 +554,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <p className="text-blue-200 mb-4">Работаем круглосуточно</p>
             <p className="text-sm text-blue-300">
-              © 2024 ЗаказАвтобусов. Все права защищены.
+              © 2014-2025 ЗаказАвтобусов. Все права защищены.
             </p>
           </div>
         </div>
