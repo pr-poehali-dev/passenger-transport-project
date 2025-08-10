@@ -382,6 +382,90 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Наш автопарк и места назначения
+            </h2>
+            <p className="text-xl text-gray-600">
+              Современные автобусы и красивые места Крыма
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/files/426b6bbe-e7ab-4cad-ba01-147a283ea6c9.jpeg" 
+                alt="Автобусы компании" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Современный автопарк</h3>
+                <p className="text-gray-600">Комфортабельные микроавтобусы Mercedes для ваших поездок</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/files/85c1b091-d8f0-43d6-8934-4c68ed1d03c1.jpeg" 
+                alt="Автобус в поле маков" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Живописные маршруты</h3>
+                <p className="text-gray-600">Путешествуйте по красивейшим местам Крыма в комфорте</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/files/5ad72a42-ec35-4f25-b86d-ea8899175da2.jpeg" 
+                alt="Микроавтобус Mercedes" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Mercedes Sprinter</h3>
+                <p className="text-gray-600">Премиальные микроавтобусы с максимальным комфортом</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/files/1131ea80-222f-4113-9587-52614579ccb4.jpeg" 
+                alt="Замок в Крыму" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Исторические места</h3>
+                <p className="text-gray-600">Посетите уникальные достопримечательности полуострова</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/files/256024b8-820c-4afa-8881-942da7dfa26a.jpeg" 
+                alt="Туристический автобус Аллея Крыма" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Туристические автобусы</h3>
+                <p className="text-gray-600">Большие автобусы для групповых экскурсий по Крыму</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
+              <div className="text-center p-8">
+                <Icon name="Camera" size={48} className="text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2 text-blue-900">И многое другое</h3>
+                <p className="text-blue-700">Откройте для себя красоты Крыма вместе с нами</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-blue-900 text-white">
         <div className="container mx-auto px-4">
