@@ -455,11 +455,47 @@ const Index = () => {
               </div>
             </div>
             
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/files/7683be57-5f6c-459b-aed2-d2615e46d50f.jpeg" 
+                alt="Горная река в Крыму" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Горные реки</h3>
+                <p className="text-gray-600">Кристально чистые воды крымских горных рек</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/files/f03910db-93b7-412b-9504-9fd2a8c35fc6.jpeg" 
+                alt="Горное ущелье Крыма" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Горные ущелья</h3>
+                <p className="text-gray-600">Захватывающие виды крымских каньонов и ущелий</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/files/85533102-bea8-46b6-ad82-fb51603c74f8.jpeg" 
+                alt="Горное озеро в Крыму" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Горные озера</h3>
+                <p className="text-gray-600">Живописные озера в окружении крымских гор</p>
+              </div>
+            </div>
+            
             <div className="bg-white rounded-lg shadow-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
               <div className="text-center p-8">
                 <Icon name="Camera" size={48} className="text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-blue-900">И многое другое</h3>
-                <p className="text-blue-700">Откройте для себя красоты Крыма вместе с нами</p>
+                <p className="text-blue-700">Откройте для себя все красоты Крыма вместе с нами</p>
               </div>
             </div>
           </div>
