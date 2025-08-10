@@ -1,8 +1,32 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://your-domain.com/sitemap.xml
 
-# Crawl-delay
+# Crawl-delay for polite crawling
 Crawl-delay: 1
+
+# Allow search engines to access important resources
+Allow: /favicon.ico
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+
+# Block access to sensitive files
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.log
+Disallow: /src/
+Disallow: /node_modules/
+
+# Special instructions for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
