@@ -28,38 +28,41 @@ const Index = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
 
-    try {
-      const response = await fetch('/api/send-order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    // Формируем тело письма
+    const emailBody = `
+Новая заявка на перевозку:
 
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          phone: '',
-          route: '',
-          passengers: '',
-          date: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+Имя: ${formData.name}
+Телефон: ${formData.phone}
+Маршрут: ${formData.route}
+Количество пассажиров: ${formData.passengers}
+Дата поездки: ${formData.date}
+Дополнительная информация: ${formData.message}
+
+---
+Заявка отправлена с сайта ЗаказАвтобусов
+    `.trim();
+
+    // Открываем почтовый клиент
+    const mailtoLink = `mailto:info@zakazavtobusov.ru?subject=Заявка на перевозку от ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailtoLink;
+
+    // Показываем сообщение об успехе
+    setSubmitStatus('success');
+    setFormData({
+      name: '',
+      phone: '',
+      route: '',
+      passengers: '',
+      date: '',
+      message: ''
+    });
+
+    setIsSubmitting(false);
   };
 
   const services = [
