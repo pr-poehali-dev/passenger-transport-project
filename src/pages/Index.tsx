@@ -48,7 +48,7 @@ const Index = () => {
     `.trim();
 
     // Открываем почтовый клиент
-    const mailtoLink = `mailto:info@zakazavtobusov.ru?subject=Заявка на перевозку от ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:kasimova1.r1996@icloud.com?subject=Заявка на перевозку от ${formData.name}&body=${encodeURIComponent(emailBody)}`;
     window.location.href = mailtoLink;
 
     // Показываем сообщение об успехе
